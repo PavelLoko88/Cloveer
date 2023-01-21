@@ -1,0 +1,201 @@
+@import "mix.scss";
+@import "var.scss";
+// Adaptive at the end!!!
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial';
+}
+
+.container {
+    width: 1200px;
+}
+
+.shadow {
+    width: 253px;
+    height: 253px;
+    background-color: $black;
+}
+
+// HEADER
+.header {
+    @include flex(center, flex-start);
+}
+
+// ICON
+.icon {
+    &-text {
+        @include fonts(800, 40px, 48px, $black) {
+            font-family: 'Inter';
+        }
+        ;
+        z-index: 1;
+    }
+    &-underline {
+        @include underline(110px, 13px);
+        margin-left: 34px;
+        margin-bottom: 2px;
+    }
+}
+
+// NAVIGATION
+.navigation {
+    margin-top: 45px;
+    @include flex(space-between, center);
+    // POSITION ICON
+    &-icon {
+        width: 145px;
+        height: 50px;
+        @include flex(space-between, flex-end) {}
+        ;
+    }
+    // NAV-ITEMS
+    &-items {
+        margin-left: 270px;
+        @include flex(space-between, center);
+    }
+    &-item {
+        padding: 10px;
+        @include flex(center, center);
+        &-link {
+            @include fonts(400, 20px, 23px, $black) {
+                text-decoration: none;
+            }
+            ;
+        }
+    }
+    // NAV-BTN
+    &-buttons {
+        margin-left: 165px;
+        @include flex(flex-end, center);
+        .logIn {
+            margin-right: 5px;
+            @include button(135px, 41px) {
+                background-color: $white;
+            }
+            @include fonts(700, 20px, 23px, $black);
+        }
+        .logUp {
+            @include button(135px, 41px) {}
+            @include fonts(700, 20px, 23px, $black);
+        }
+    }
+}
+
+// PREV
+.prev {
+    margin-top: 120px;
+    @include flex(center, flex-start);
+    &-content {
+        // UP
+        &-up {
+            width: 100%;
+            @include flex(space-between, center);
+        }
+        // DOWN
+        &-down {
+            margin-top: 40px;
+            @include flex(space-between, flex-end);
+        }
+    }
+}
+
+//INTRODUCTION
+.introduction {
+    // LEFT
+    &-left {
+        height: 225px;
+        @include flex(space-between, flex-end);
+    }
+    &-title {
+        @include fonts(700, 65px, 75px, $black);
+        z-index: 1;
+    }
+    &-undeline {
+        @include underline(335px, 19px) {
+            margin-left: 156px;
+            margin-bottom: 80px;
+        }
+        ;
+    }
+    // RIGHT
+    &-right {
+        margin-right: 32px;
+    }
+    &-text {
+        @include fonts(400, 20px, 23px, $black);
+    }
+    &-btn {
+        margin-top: 55px;
+        @include button(169px, 53px);
+        @include fonts(700, 24px, 28px, $black);
+    }
+}
+
+// SERVICES
+.services {
+    // LEFT
+    &-left {
+        @include flex(space-between, center);
+    }
+    &-blocks {
+        width: 315px;
+        margin-right: 30px;
+        &:nth-last-child(1) {
+            margin-right: 0;
+        }
+    }
+    &-block {
+        width: 300px;
+        height: 254px;
+        background-color: $yellow;
+        position: absolute;
+        margin-left: 15px;
+        margin-top: 15px;
+        z-index: 2;
+    }
+    &-title {
+        @include fonts(700, 24px, 28px, $black);
+        margin-left: 16px;
+        padding-top: 16px;
+    }
+    &-text {
+        @include fonts(400, 16px, 18px, $black);
+        margin-left: 16px;
+        margin-top: 45px;
+    }
+    &-btn {
+        &:hover {
+            cursor: pointer;
+        }
+        background: none;
+        border: none;
+        @include flex(center, center);
+        margin-left: 16px;
+        margin-top: 45px;
+        .btn-text {
+            margin-right: 5px;
+            @include fonts(700, 20px, 23px, $white);
+        }
+        .img-sevices {}
+    }
+    // RIGHT
+    &-right {
+        width: 491px;
+        height: 491px;
+        background-image: url(../img/man.png);
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+// ADAPTIVE
+.ghost-open {
+    display: none;
+}
+
+.humb {
+    display: none;
+}
+
+@import "media.scss";

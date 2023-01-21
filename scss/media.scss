@@ -1,0 +1,156 @@
+@import"mix.scss";
+@import"var.scss";
+@include desktop {
+    // body {
+    //     margin: 15px;
+    // }
+    // .container {
+    //     width: 100%;
+    // }
+    // .navigation {
+    //     &-items {
+    //         margin-left: 165px;
+    //     }
+    //     &-buttons {
+    //         margin-left: 70px;
+    //     }
+    // }
+}
+
+@include laptop {}
+
+@include tablet {}
+
+@include mobile {
+    .container {
+        width: 100%;
+    }
+    body {
+        margin-top: 15px;
+        margin-left: 20px;
+        margin-right: 25px;
+    }
+    .humb {
+        display: block;
+    }
+    // HEADER
+    .navigation {
+        margin-top: 0;
+        &-items {
+            display: none;
+        }
+        &-buttons {
+            display: none;
+        }
+        &-icon {
+            width: 70px;
+            height: 24px;
+            @include flex(space-between, flex-end) {}
+            ;
+        }
+    }
+    // icon
+    .icon {
+        &-text {
+            @include fonts(800, 20px, 24px, $black) {
+                font-family: 'Inter';
+            }
+            ;
+            z-index: 1;
+        }
+        &-underline {
+            @include underline(54px, 6px);
+            margin-left: 16px;
+            margin-bottom: 4px;
+        }
+    }
+    // preview 
+    .prev {
+        margin-top: 85px;
+        flex-direction: column;
+        &-content {
+            // UP
+            &-up {
+                flex-direction: column;
+            }
+            // DOWN
+            &-down {
+                @include flex(center, center);
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    //INTRODUCTION
+    .introduction {
+        // LEFT
+        &-left {
+            height: 123px;
+            @include flex(space-between, flex-end);
+        }
+        &-title {
+            @include fonts(700, 36px, 41px, $black);
+            z-index: 1;
+        }
+        &-undeline {
+            @include underline(195px, 9px) {
+                margin-left: 85px;
+                margin-bottom: 42px;
+            }
+            ;
+        }
+        // RIGHT
+        &-right {
+            @include flex(center, flex-start) {
+                flex-direction: column;
+            }
+        }
+        &-text {
+            @include fonts(400, 15px, 17px, $black);
+        }
+        &-btn {
+            margin-top: 35px;
+            @include button(121px, 37px);
+            @include fonts(700, 16px, 18px, $black);
+        }
+    }
+    // SERVICES
+    .services {
+        @include flex(center, center);
+        // LEFT
+        &-left {
+            margin-top: 80px;
+            @include flex(center, center) {
+                flex-direction: column-reverse;
+            }
+            ;
+        }
+        &-blocks {
+            width: 312px;
+            margin-bottom: 33px;
+            margin-right: 0;
+        }
+        &-block {
+            width: 300px;
+            height: 254px;
+            background-color: $yellow;
+            position: absolute;
+            margin-left: 15px;
+            margin-top: 15px;
+            z-index: 2;
+        }
+        // RIGHT
+        &-right {
+            margin-top: 56px;
+            width: 276px;
+            height: 276px;
+            background-size: 100%;
+        }
+    }
+    // GHOST
+    .ghost-open {
+        display: flex;
+    }
+    .ghost-close {
+        display: none;
+    }
+}

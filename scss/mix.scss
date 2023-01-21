@@ -1,0 +1,63 @@
+@mixin fonts ($weights, $sizes, $lineHeights, $colors) {
+    font-style: normal;
+    font-weight: $weights;
+    font-size: $sizes;
+    line-height: $lineHeights;
+    color: $colors;
+    @content;
+}
+
+@mixin flex ($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    @content;
+}
+
+@mixin button ($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: $yellow;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        cursor: pointer;
+    }
+    @content;
+}
+
+@mixin underline($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: $yellow;
+    position: absolute;
+    @content;
+}
+
+//MEDIA
+@import"var.scss";
+@mixin desktop() {
+    @media(max-width: $xxl) {
+        @content;
+    }
+}
+
+@mixin laptop() {
+    @media(max-width: $xl) {
+        @content;
+    }
+}
+
+@mixin tablet() {
+    @media(max-width: $mb) {
+        @content;
+    }
+}
+
+@mixin mobile() {
+    @media(max-width: $sm) {
+        @content;
+    }
+}
