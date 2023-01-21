@@ -14,7 +14,7 @@
     <title>Clover</title>
 </head>
 
-<body>
+<body id="body">
     <!-- HEADer -->
     <div class="header ">
         <div class="navigation container">
@@ -47,8 +47,40 @@
                 <button class="logIn">Log in</button>
                 <button class="logUp">Log up</button>
             </div>
-            <div class="humb">
-                <img src=".//img/numb.png" alt="">
+            <div class="hide-menu">
+                <button class="hamburger" id="hamberger"> 
+        <img src="img/humb.png" alt="" class="hamb" width="rem(28)" height="rem(25)">
+    </button>
+
+            </div>
+            <div class="hide-menu-link close" id="hide-list">
+                <ul class="hide-menu__list   ">
+                    <li class="menu__list">
+                        <a class="nav-link" href="">About</a>
+                    </li>
+
+                    <li class="menu__list">
+                        <a class="nav-link" href="">Services</a>
+                    </li>
+
+                    <li class="menu__list">
+                        <a class="nav-link" href="">Pricing</a>
+                    </li>
+
+                    <li class="menu__list">
+                        <a class="nav-link" href="">Account</a>
+                    </li>
+
+
+
+                </ul>
+
+
+                <div class="hide-menu-btn">
+                    <button class="logIn">Login</button>
+                    <button class="logUp">Log up</button>
+                </div>
+
             </div>
         </div>
     </div>
@@ -57,9 +89,9 @@
         <!-- CONTENT -->
         <div class="prev-content container">
             <!-- CONTENT-UP -->
-            <div class="prev-content-up">
+            <div class="prev-content-up" id="img">
                 <!-- LEFT -->
-                <div class="introduction-left">
+                <div class="introduction-left" id="ghost">
                     <h1 class="introduction-title">Gain clarity over <br> your marketing <br> decisions.
                     </h1>
                     <div class="introduction-undeline"></div>
@@ -72,6 +104,7 @@
 
                 </div>
                 <div class="services-right ghost-open">
+                    <div class="" id="blurs"></div>
                 </div>
             </div>
             <!-- CONTENT-DOWN -->
@@ -119,7 +152,7 @@
         </div>
 
 
-
+        <script src="script/script.js"></script>
 </body>
 
 </html>

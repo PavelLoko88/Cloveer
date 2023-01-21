@@ -2,7 +2,9 @@ $black: #000000;
 $yellow: #FFE605;
 $white: #ffffff;
 // MEDIA
-$xxl:1200px;
-$xl:1024px;
-$mb:767px;
-$sm:415px;
+$xxl:rem(1200);
+$xl:rem(1024);
+$mb:rem(767);
+$ms:rem(530);
+$sm:rem(380);
+$ssm:rem(335);

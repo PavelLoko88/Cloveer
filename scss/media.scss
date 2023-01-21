@@ -1,50 +1,120 @@
 @import"mix.scss";
 @import"var.scss";
 @include desktop {
-    // body {
-    //     margin: 15px;
-    // }
-    // .container {
-    //     width: 100%;
-    // }
-    // .navigation {
-    //     &-items {
-    //         margin-left: 165px;
-    //     }
-    //     &-buttons {
-    //         margin-left: 70px;
-    //     }
-    // }
+    html {
+        font-size: 13px;
+    }
 }
 
-@include laptop {}
+@include laptop {
+    html {
+        font-size: 10px;
+    }
+}
 
-@include tablet {}
+@include tablet {
+    html {
+        font-size: 7px;
+    }
+}
+
+@include tablet-mini {
+    html {
+        font-size: 5px;
+    }
+}
 
 @include mobile {
+    html {
+        font-size: 16px;
+    }
     .container {
         width: 100%;
     }
-    body {
-        margin-top: 15px;
-        margin-left: 20px;
-        margin-right: 25px;
-    }
-    .humb {
+    // BURGER
+    .hide-menu {
         display: block;
+    }
+    .hamburger {
+        @include flex(center, center);
+        background: none;
+        border: none;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .hide-menu-link {
+        padding-top: rem(230);
+        position: absolute;
+        @include flex(flex-start, flex-start) {
+            flex-direction: column;
+        }
+        ;
+    }
+    .hide-menu__list {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .menu__list {
+        list-style-type: none;
+        margin-top: rem(10);
+    }
+    .nav-link {
+        @include fonts(400, 16, 18, $black) {
+            text-decoration: none;
+        }
+        ;
+    }
+    .hide-menu-btn {
+        @include flex(flex-start, center);
+    }
+    .log {
+        &In {
+            @include fonts(700, 16, 18, $black);
+            margin-right: rem(5);
+            @include button(40, 31) {
+                background: none;
+            }
+            ;
+        }
+        &Up {
+            @include fonts(700, 16, 18, $black);
+            @include button(101, 31);
+        }
+    }
+    .close {
+        top: rem(-500);
+    }
+    .open {
+        top: rem(-170);
+    }
+    .ghost {
+        display: none;
+    }
+    // CONTENT
+    body {
+        margin-top: rem(15);
+        margin-left: rem(20);
+        margin-right: rem(25);
     }
     // HEADER
     .navigation {
         margin-top: 0;
         &-items {
             display: none;
+            &-link {
+                @include fonts(400, 16, 18, $black) {
+                    text-decoration: none;
+                }
+                ;
+            }
         }
         &-buttons {
             display: none;
         }
         &-icon {
-            width: 70px;
-            height: 24px;
+            width: rem(70);
+            height: rem(24);
             @include flex(space-between, flex-end) {}
             ;
         }
@@ -52,21 +122,21 @@
     // icon
     .icon {
         &-text {
-            @include fonts(800, 20px, 24px, $black) {
+            @include fonts(800, 20, 24, $black) {
                 font-family: 'Inter';
             }
             ;
             z-index: 1;
         }
         &-underline {
-            @include underline(54px, 6px);
-            margin-left: 16px;
-            margin-bottom: 4px;
+            @include underline(54, 6);
+            margin-left: rem(16);
+            margin-bottom: rem(4);
         }
     }
     // preview 
     .prev {
-        margin-top: 85px;
+        margin-top: rem(85);
         flex-direction: column;
         &-content {
             // UP
@@ -84,17 +154,17 @@
     .introduction {
         // LEFT
         &-left {
-            height: 123px;
+            height: rem(123);
             @include flex(space-between, flex-end);
         }
         &-title {
-            @include fonts(700, 36px, 41px, $black);
+            @include fonts(700, 37, 41, $black);
             z-index: 1;
         }
         &-undeline {
-            @include underline(195px, 9px) {
-                margin-left: 85px;
-                margin-bottom: 42px;
+            @include underline(195, 9) {
+                margin-left: rem(85);
+                margin-bottom: rem(42);
             }
             ;
         }
@@ -105,12 +175,12 @@
             }
         }
         &-text {
-            @include fonts(400, 15px, 17px, $black);
+            @include fonts(400, 15, 17, $black);
         }
         &-btn {
-            margin-top: 35px;
-            @include button(121px, 37px);
-            @include fonts(700, 16px, 18px, $black);
+            margin-top: rem(35);
+            @include button(121, 37);
+            @include fonts(700, 16, 18, $black);
         }
     }
     // SERVICES
@@ -118,31 +188,31 @@
         @include flex(center, center);
         // LEFT
         &-left {
-            margin-top: 80px;
+            margin-top: rem(85);
             @include flex(center, center) {
                 flex-direction: column-reverse;
             }
             ;
         }
         &-blocks {
-            width: 312px;
-            margin-bottom: 33px;
+            width: rem(312);
+            margin-bottom: rem(33);
             margin-right: 0;
         }
         &-block {
-            width: 300px;
-            height: 254px;
+            width: rem(300);
+            height: rem(254);
             background-color: $yellow;
             position: absolute;
-            margin-left: 15px;
-            margin-top: 15px;
+            margin-left: rem(15);
+            margin-top: rem(15);
             z-index: 2;
         }
         // RIGHT
         &-right {
-            margin-top: 56px;
-            width: 276px;
-            height: 276px;
+            margin-top: rem(56);
+            width: rem(276);
+            height: rem(276);
             background-size: 100%;
         }
     }
@@ -151,6 +221,146 @@
         display: flex;
     }
     .ghost-close {
+        display: none;
+    }
+}
+
+@include mobile-mini {
+    html {
+        font-size: 14px;
+    }
+    .container {
+        width: 100%;
+    }
+    body {
+        margin-top: rem(15);
+        margin-left: rem(20);
+        margin-right: rem(25);
+    }
+    .humb {
+        display: block;
+    }
+    // HEADER
+    .navigation {
+        margin-top: 0;
+        &-items {
+            display: none;
+        }
+        &-buttons {
+            display: none;
+        }
+        &-icon {
+            width: rem(70);
+            height: rem(24);
+            @include flex(space-between, flex-end) {}
+            ;
+        }
+    }
+    // icon
+    .icon {
+        &-text {
+            @include fonts(800, 20, 24, $black) {
+                font-family: 'Inter';
+            }
+            ;
+            z-index: 1;
+        }
+        &-underline {
+            @include underline(54, 6);
+            margin-left: rem(16);
+            margin-bottom: rem(4);
+        }
+    }
+    // preview 
+    .prev {
+        margin-top: rem(85);
+        flex-direction: column;
+        &-content {
+            // UP
+            &-up {
+                flex-direction: column;
+            }
+            // DOWN
+            &-down {
+                @include flex(center, center);
+                flex-direction: column-reverse;
+            }
+        }
+    }
+    //INTRODUCTION
+    .introduction {
+        // LEFT
+        &-left {
+            height: rem(123);
+            @include flex(space-between, flex-end);
+        }
+        &-title {
+            @include fonts(700, 36, 41, $black);
+            z-index: 1;
+        }
+        &-undeline {
+            @include underline(195, 9) {
+                margin-left: rem(85);
+                margin-bottom: rem(42);
+            }
+            ;
+        }
+        // RIGHT
+        &-right {
+            @include flex(center, flex-start) {
+                flex-direction: column;
+            }
+        }
+        &-text {
+            @include fonts(400, 15, 17, $black);
+        }
+        &-btn {
+            margin-top: rem(35);
+            @include button(121, 37);
+            @include fonts(700, 16, 18, $black);
+        }
+    }
+    // SERVICES
+    .services {
+        @include flex(center, center);
+        // LEFT
+        &-left {
+            margin-top: rem(85);
+            @include flex(center, center) {
+                flex-direction: column-reverse;
+            }
+            ;
+        }
+        &-blocks {
+            width: rem(312);
+            margin-bottom: rem(33);
+            margin-right: 0;
+        }
+        &-block {
+            width: rem(300);
+            height: rem(254);
+            background-color: $yellow;
+            position: absolute;
+            margin-left: rem(15);
+            margin-top: rem(15);
+            z-index: 2;
+        }
+        // RIGHT
+        &-right {
+            margin-top: rem(56);
+            width: rem(276);
+            height: rem(276);
+            background-size: 100%;
+        }
+    }
+    // GHOST
+    .ghost-open {
+        display: flex;
+    }
+    .ghost-close {
+        display: none;
+    }
+    .ghost {
         display: none;
     }
 }

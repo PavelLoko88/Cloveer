@@ -1,6 +1,13 @@
 @import "mix.scss";
 @import "var.scss";
 // Adaptive at the end!!!
+@function rem($value) {
+    $remValue: ($value / 16) + rem;
+    @return $remValue;
+}
+
+html {}
+
 * {
     padding: 0;
     margin: 0;
@@ -8,12 +15,12 @@
 }
 
 .container {
-    width: 1200px;
+    width: rem(1200);
 }
 
 .shadow {
-    width: 253px;
-    height: 253px;
+    width: rem(253);
+    height: rem(253);
     background-color: $black;
 }
 
@@ -25,40 +32,40 @@
 // ICON
 .icon {
     &-text {
-        @include fonts(800, 40px, 48px, $black) {
+        @include fonts(800, 40, 48, $black) {
             font-family: 'Inter';
         }
         ;
         z-index: 1;
     }
     &-underline {
-        @include underline(110px, 13px);
-        margin-left: 34px;
-        margin-bottom: 2px;
+        @include underline(110, 13);
+        margin-left: rem(34);
+        margin-bottom: rem(2);
     }
 }
 
 // NAVIGATION
 .navigation {
-    margin-top: 45px;
+    margin-top: rem(45);
     @include flex(space-between, center);
     // POSITION ICON
     &-icon {
-        width: 145px;
-        height: 50px;
+        width: rem(145);
+        height: rem(50);
         @include flex(space-between, flex-end) {}
         ;
     }
     // NAV-ITEMS
     &-items {
-        margin-left: 270px;
+        margin-left: rem(270);
         @include flex(space-between, center);
     }
     &-item {
-        padding: 10px;
+        padding: rem(10);
         @include flex(center, center);
         &-link {
-            @include fonts(400, 20px, 23px, $black) {
+            @include fonts(400, 20, 23, $black) {
                 text-decoration: none;
             }
             ;
@@ -66,25 +73,25 @@
     }
     // NAV-BTN
     &-buttons {
-        margin-left: 165px;
+        margin-left: rem(165);
         @include flex(flex-end, center);
         .logIn {
-            margin-right: 5px;
-            @include button(135px, 41px) {
+            margin-right: rem(5);
+            @include button(135, 41) {
                 background-color: $white;
             }
-            @include fonts(700, 20px, 23px, $black);
+            @include fonts(700, 20, 23, $black);
         }
         .logUp {
-            @include button(135px, 41px) {}
-            @include fonts(700, 20px, 23px, $black);
+            @include button(135, 41) {}
+            @include fonts(700, 20, 23, $black);
         }
     }
 }
 
 // PREV
 .prev {
-    margin-top: 120px;
+    margin-top: rem(120);
     @include flex(center, flex-start);
     &-content {
         // UP
@@ -94,7 +101,7 @@
         }
         // DOWN
         &-down {
-            margin-top: 40px;
+            margin-top: rem(40);
             @include flex(space-between, flex-end);
         }
     }
@@ -104,31 +111,31 @@
 .introduction {
     // LEFT
     &-left {
-        height: 225px;
+        height: rem(225);
         @include flex(space-between, flex-end);
     }
     &-title {
-        @include fonts(700, 65px, 75px, $black);
+        @include fonts(700, 65, 75, $black);
         z-index: 1;
     }
     &-undeline {
-        @include underline(335px, 19px) {
-            margin-left: 156px;
-            margin-bottom: 80px;
+        @include underline(335, 19) {
+            margin-left: rem(156);
+            margin-bottom: rem(80);
         }
         ;
     }
     // RIGHT
     &-right {
-        margin-right: 32px;
+        margin-right: rem(32);
     }
     &-text {
-        @include fonts(400, 20px, 23px, $black);
+        @include fonts(400, 20, 23, $black);
     }
     &-btn {
-        margin-top: 55px;
-        @include button(169px, 53px);
-        @include fonts(700, 24px, 28px, $black);
+        margin-top: rem(55);
+        @include button(169, 53);
+        @include fonts(700, 24, 28, $black);
     }
 }
 
@@ -139,30 +146,30 @@
         @include flex(space-between, center);
     }
     &-blocks {
-        width: 315px;
-        margin-right: 30px;
+        width: rem(315);
+        margin-right: rem(30);
         &:nth-last-child(1) {
             margin-right: 0;
         }
     }
     &-block {
-        width: 300px;
-        height: 254px;
+        width: rem(300);
+        height: rem(254);
         background-color: $yellow;
         position: absolute;
-        margin-left: 15px;
-        margin-top: 15px;
+        margin-left: rem(15);
+        margin-top: rem(15);
         z-index: 2;
     }
     &-title {
-        @include fonts(700, 24px, 28px, $black);
-        margin-left: 16px;
-        padding-top: 16px;
+        @include fonts(700, 24, 28, $black);
+        margin-left: rem(16);
+        padding-top: rem(16);
     }
     &-text {
-        @include fonts(400, 16px, 18px, $black);
-        margin-left: 16px;
-        margin-top: 45px;
+        @include fonts(400, 16, 18, $black);
+        margin-left: rem(16);
+        margin-top: rem(45);
     }
     &-btn {
         &:hover {
@@ -171,21 +178,22 @@
         background: none;
         border: none;
         @include flex(center, center);
-        margin-left: 16px;
-        margin-top: 45px;
+        margin-left: rem(16);
+        margin-top: rem(45);
         .btn-text {
-            margin-right: 5px;
-            @include fonts(700, 20px, 23px, $white);
+            margin-right: rem(5);
+            @include fonts(700, 20, 23, $white);
         }
         .img-sevices {}
     }
     // RIGHT
     &-right {
-        width: 491px;
-        height: 491px;
+        width: rem(491);
+        height: rem(491);
         background-image: url(../img/man.png);
         background-position: center;
         background-repeat: no-repeat;
+        background-size: 100%;
     }
 }
 
@@ -194,8 +202,34 @@
     display: none;
 }
 
-.humb {
+.hide-menu {
     display: none;
 }
 
+.hide-menu-link {
+    display: none
+}
+
+.margin-up {
+    padding-top: rem(100);
+}
+
+.blur {
+    background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
+    backdrop-filter: blur(8px); // This be the blur
+    height: 100%;
+    width: 100%;
+}
+
+.offblur {
+    background: none;
+}
+
+.fixed {
+    position: fixed;
+}
+
 @import "media.scss";
+.ghost {
+    display: none;
+}
