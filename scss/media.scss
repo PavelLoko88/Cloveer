@@ -93,6 +93,7 @@
     }
     // HEADER
     .navigation {
+        @include flex(space-between, center);
         margin-top: 0;
         &-items {
             display: none;
